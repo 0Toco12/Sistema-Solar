@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+   <title>Mapeando Imagens</title>
+</head>
+<body>
+
+<img src="./img/planetas-do-sistema-solar.jpg" alt="solar" usemap="#workmap" width="700" height="400" id="i1">
+
+<map name="workmap">
+  <area shape="rect" coords="8,112,42,357" alt="Sol" href="sol.html" target="_blank">
+  <area shape="circle" coords="76,215,14" alt="Mercurio" href="mecurio.html" target="_blank">
+  <area shape="circle" coords="126,222,26" alt="Venus" href="venus.html" target="_blank">
+  <area shape="circle" coords="185,217,26" alt="Terra" href="terra.html" target="_blank">
+  <area shape="circle" coords="245,219,20" alt="Marte" href="marte.html" target="_blank">
+  <area shape="circle" coords="335,219,60" alt="Júpter" href="./jupiter.html" target="_blank">
+  <area shape="circle" coords="455,211,26" alt="Saturno" href="saturno.html" target="_blank">
+  <area shape="circle" coords="560,222,30" alt="Urano" href="urano.html" target="_blank">
+  <area shape="circle" coords="635,223,26" alt="Netuno" href="netuno.html" target="_blank">
+</map>
+
+<p>
+  Mouse pos: <b><span id="mouse-pos"></span></b>
+</p>
+
+<script>
+
+const mousePosText = document.getElementById('mouse-pos');
+let mousePos = { x: undefined, y: undefined };
+
+window.addEventListener('mousemove', (event) => {
+  mousePos = { x: event.clientX, y: event.clientY };
+  mousePosText.textContent = `(${mousePos.x}, ${mousePos.y})`;
+});
+</script>
+
+</body>
+</html>
